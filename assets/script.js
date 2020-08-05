@@ -3,8 +3,8 @@ $(document).ready(function () {
 
 
     $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
+        let text = $(this).siblings(".description").val();
+        let time = $(this).parent().attr("id");
 
         
         localStorage.setItem(time, text);
@@ -21,11 +21,10 @@ $(document).ready(function () {
 
 
     function hourTracker() {
-        var currentHour = moment().hour();
+        let currentHour = moment().hour();
 
         $(".time-block").each(function () {
-            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
-            console.log( blockHour, currentHour)
+            let blockHour = parseInt($(this).attr("id").split("hour")[1]);
 
             if (blockHour < currentHour) {
                 $(this).addClass("past");
